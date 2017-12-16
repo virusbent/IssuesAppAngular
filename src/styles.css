@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+.body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.system-color-blue{
+    color: #78b4f5;
+}
+
+.system-color-blue2{
+    color: #268eff;
+}
+
+.bd-callout {
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #eee;
+    border-left-width: .25rem;
+    border-radius: .25rem;
+}

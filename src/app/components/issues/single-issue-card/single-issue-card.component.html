@@ -1,0 +1,66 @@
+<div id="single-issue-card" class="container">
+  <div style="margin: 15px 0px;">
+    <div class="card" style="border-color: #77b4f5;">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-10">
+            <i *ngIf="issue.label.type == 'bug'" [ngClass]="{
+                            'bug-declined': issue.label.status == 'declined',
+                            'bug-pending':  issue.label.status == 'pending',
+                            'bug-solved':   issue.label.status == 'solved',
+                            'bug-approved': issue.label.status == 'approved',
+                            'bug-failed':   issue.label.status == 'failed'
+                            }" class="fal fa-bug fa-2x align-middle"></i>
+            <i *ngIf="issue.label.type == 'feature'" [ngClass]="{
+                            'feature-declined': issue.label.status == 'declined',
+                            'feature-pending':  issue.label.status == 'pending',
+                            'feature-solved':   issue.label.status == 'solved',
+                            'feature-approved': issue.label.status == 'approved',
+                            'feature-failed':   issue.label.status == 'failed'
+                            }" class="fal fa-magic fa-2x align-middle"></i>
+            <i *ngIf="issue.label.type == 'style'" [ngClass]="{
+                            'style-declined': issue.label.status == 'declined',
+                            'style-pending':  issue.label.status == 'pending',
+                            'style-solved':   issue.label.status == 'solved',
+                            'style-approved': issue.label.status == 'approved',
+                            'style-failed':   issue.label.status == 'failed'
+                            }" class="fal fa-paint-brush fa-2x align-middle"></i>
+            <span class="issue-header-title align-middle">&nbsp;{{ issue.label.type | titleCase }} - {{ issue.id }}</span>
+          </div>
+          <div class="col-md-2 p-0 text-right">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default"><i class="fal fa-comment-alt"></i></button>
+              <button type="button" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <button class="dropdown-item" type="button"><i class="fal fa-comment-alt"></i></button>
+                <button class="dropdown-item" type="button"><i class="fal fa-pencil"></i></button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item" type="button"><i class="fal fa-trash-alt"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">{{ issue.title }}</h4>
+        <h6 class="card-subtitle mb-2">
+          <i class="fal fa-user-circle fa-lg align-middle"></i>
+          <span class="text-muted align-middle">
+            &nbsp;{{ issue.author.first_name.concat(" ", issue.author.last_name) }}
+          </span>
+        </h6>
+        <p class="card-text" style="height: 150px; overflow: hidden;">{{ issue.description }}</p>
+      </div>
+      <div class="card-footer">
+        <div class="float-right">
+          <button (click)="showIssueQuickInfo()" class="btn btn-default">Quick Info</button>
+          <button (click)="showIssueFullInfo()" class="btn btn-default">Full Info</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+

@@ -1,0 +1,66 @@
+#single-issue-card .issue-header-title {
+    font-size: 1.5em;
+}
+
+/* LABELS */
+
+#single-issue-card .bug-pending {
+     color: #6610f2;
+ }
+#single-issue-card .bug-solved {
+    color: #28a745;
+}
+#single-issue-card .bug-approved {
+    color: #007bff;
+}
+#single-issue-card .bug-declined {
+    color: #868e96;
+}
+#single-issue-card .bug-failed {
+    color: #dc3545;
+}
+
+#single-issue-card .feature-pending {
+    color: #6610f2;
+}
+#single-issue-card .feature-solved {
+    color: #28a745;
+}
+#single-issue-card .feature-approved {
+    color: #007bff;
+}
+#single-issue-card .feature-declined {
+    color: #868e96;
+}
+#single-issue-card .feature-failed {
+    color: #dc3545;
+}
+
+#single-issue-card .style-pending {
+    color: #6610f2;
+}
+#single-issue-card .style-solved {
+    color: #28a745;
+}
+#single-issue-card .style-approved {
+    color: #007bff;
+}
+#single-issue-card .style-declined {
+    color: #868e96;
+}
+#single-issue-card .style-failed {
+    color: #dc3545;
+}
+
+
+
+/* FONT AWESOME RELATED */
+#single-issue-card .fa-user-circle:hover{
+    color: #78b4f5;
+}
+
+
+/* BOOTSTRAP OVERRIDES */
+#single-issue-card .dropdown-menu {
+    min-width: 4rem;
+}

@@ -1,0 +1,23 @@
+<div id="issues" class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>List of Issues</h3>
+    </div>
+  </div>
+  <div class="row" *ngIf="!issuesLoaded"><!-- *ngIf="!( issues | async )?.length" *ngIf="!issuesLoaded" -->
+    <div class="col-md-6">
+      <i class="fal fa-cog fa-3x fa-spin system-color-blue align-middle"></i>
+      <span class="align-middle" style="font-size: 2.5em;">&nbsp;Pulling Issues ... </span>
+    </div>
+  </div>
+  <div class="row" *ngIf="issuesLoaded">
+      <!--<ul>
+        <li *ngFor="let issue of issues" style="margin: 20px;">
+          <a uiSref=".issue" [uiParams]="{ issueId: issue.id }">
+            {{ issue.title }}
+          </a>
+        </li>
+      </ul>-->
+      <app-single-issue-card *ngFor="let issue of issues" [issue]="issue" class="col-md-6"></app-single-issue-card>
+  </div>
+</div>
